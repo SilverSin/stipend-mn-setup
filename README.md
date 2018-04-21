@@ -1,10 +1,11 @@
 # Stipend
 Shell script to install a [Stipend Masternode](http://stipend.me) on a Linux server running Ubuntu 16.04. Use it on your own risk.  
 
+Updated to 1.0.9
 ***
 ## Installation:  
 
-wget -q https://raw.githubusercontent.com/zoldur/Stipend/master/stipend_install.sh  
+-q https://raw.githubusercontent.com/SilverSin/stipend-mn-setup/master/stipend_install.sh
 bash stipend_install.sh
 ***
 
