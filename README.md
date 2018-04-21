@@ -5,7 +5,7 @@ Updated to 1.0.9
 ***
 ## Installation:  
 
--q https://raw.githubusercontent.com/SilverSin/stipend-mn-setup/master/stipend_install.sh
+wget -q https://raw.githubusercontent.com/SilverSin/stipend-mn-setup/master/stipend_install.sh
 bash stipend_install.sh
 ***
 
