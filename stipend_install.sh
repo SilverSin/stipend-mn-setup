@@ -23,7 +23,7 @@ function compile_node() {
   echo -e "Prepare to download $COIN_NAME files"
   cd $TMP_FOLDER
   wget -q $COIN_REPO
-  unzip precompiled-daemon-1.0.9.zip
+  unzip precompiled-daemon-2.0.0.2.zip
   chmod +x stipendd
   cp stipendd /usr/local/bin
   clear
@@ -124,20 +124,56 @@ addnode=52.45.189.6:46978
 addnode=34.232.249.188:46978
 addnode=34.231.228.73:46978
 addnode=34.239.99.171:46978
+addnode=18.218.0.160:46978
+addnode=52.15.218.190:46978
+addnode=13.59.189.252:46978
+addnode=101.51.107.70:54036
+addnode=101.51.188.3:62766
+addnode=109.190.219.180:38598
+addnode=115.79.5.135:49710
+addnode=13.59.189.252:60120
+addnode=158.181.185.176:60336
+addnode=169.1.147.111:46978
+addnode=171.5.82.28:46978
+addnode=176.108.187.1:21486
+addnode=176.36.122.245:3711
+addnode=177.179.22.208:57885
+addnode=178.57.60.92:50945
+addnode=188.234.93.164:50206
+addnode=198.23.209.160:64869
+addnode=34.239.99.171:44928
+addnode=46.4.103.28:50924
+addnode=58.10.232.158:55325
+addnode=58.39.150.202:52333
+addnode=59.18.162.74:46978
+addnode=84.53.198.109:8539
+addnode=89.179.241.192:50510
+addnode=91.221.211.8:50961
+addnode=91.222.164.220:46978
+addnode=92.244.112.153:46978
+addnode=93.115.96.17:46978
+addnode=93.188.36.32:59863
+addnode=99.244.129.240:46978
+addnode=[2001:0:9d38:6ab8:38f2:eba:7fb7:ef65]:46978
+addnode=[2001:0:9d38:6ab8:3ca0:1ec1:9291:c00f]:56179
+addnode=[2001:0:9d38:6ab8:3cd0:1063:b195:c78b]:46978
+addnode=[2001:0:9d38:6abd:1c03:11dd:a422:2cf7]:46978
+addnode=[2001:0:9d38:90d7:14e0:385d:4b25:fa8c]:46978
+addnode=[2001:0:9d38:90d7:3ce6:11c5:6e7e:c45a]:46978
+addnode=[2400:6180:0:d1::70:4001]:59018
+addnode=[2a01:7e01::f03c:91ff:feb9:46e3]:34390
 EOF
 }
 
 
 function enable_firewall() {
-  echo -e "Installing fail2ban and setting up firewall to allow ingress on port ${GREEN}$COIN_PORT${NC}"
+  echo -e "Installing and setting up firewall to allow ingress on port ${GREEN}$COIN_PORT${NC}"
   ufw allow $COIN_PORT/tcp comment "$COIN_NAME MN port" >/dev/null
   ufw allow $RPCPORT/tcp comment "$COIN_NAME RPC port" >/dev/null
   ufw allow ssh comment "SSH" >/dev/null 2>&1
   ufw limit ssh/tcp >/dev/null 2>&1
   ufw default allow outgoing >/dev/null 2>&1
   echo "y" | ufw enable >/dev/null 2>&1
-  #systemctl enable fail2ban >/dev/null 2>&1
-  #systemctl start fail2ban >/dev/null 2>&1
 }
 
 
